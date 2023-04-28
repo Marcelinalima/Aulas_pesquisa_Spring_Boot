@@ -14,19 +14,25 @@ import br.com.floripa.aula_spring_pesquisa.model.entidades.Pesquisa;
 public class PesquisaController {
 
     
+    /**
+     * @param model
+     * @return
+     */
     @GetMapping("/nova-pesquisa")
 
-    public String carregaFormulario(Model model){
-        model.addAttribute("pesquisa",new Pesquisa()); 
+    public String carregaPaginaDeInsercao(Model model){
+        model.addAttribute("pesquisa ", new Pesquisa ()); 
               return "form-pesquisa";
         
     }
     
-    @PostMapping
-    public String salvar(@ModelAttribute("pesquisa") Pesquisa pesquisa){
+    
+    
+    @PostMapping("/salvar")
+    public String novaPesquisa(@ModelAttribute("pesquisa") Pesquisa pesquisa){
         System.out.println("PESQUISA:" + pesquisa);
         
-        return "form-pesquisa";
+        return "inserir-pesquisa";
     }
     
 }

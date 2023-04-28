@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
     <!-- Google Fonts -->
@@ -30,31 +28,25 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="/pesquisas/nova-pesquisa">Nova Pesquisa</a></li>
                   <li> <a class="dropdown-item" href="/pesquisas/listar-pesquisa">Listar Pesquisas</a></li>
-            
               </ul>
-
             </li>
-
           </ul>
 
         </div>
       </nav>
 
-    
-    
     <div class="container mt-5">
-    
     
     <div class="card">
       <div class="card-header">Cadastro de Pesquisas</div>
       <div class="card-body">
         
-        <form th:action="@{/pesquisas}" method="post" th:object="${pesquisa}">
+        <form  th:action= "@{/salvar}"th:object="${pesquisa}" method="post">
           <div class="row">
             <div class="col-3">
               <div class="form-outline">
-                  <input type="text" id="nome" class="form-control" th: field="*{nome}"/>
-                  <label class="form-label" for="typeText">NOME</label>
+                  <input type="text" id="name" class="form-control" th: field="*{nome}"/>
+                  <label class="form-label" for="typeText">NAME</label>
               </div>
             </div>
             <div class="col-4">
@@ -74,7 +66,7 @@
                 </div>
               <!-- Default checked radio -->
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault2" value="feminino" th: field="*{sexo}"/>
+                    <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault2" value="feminino" th: field="*{Sexo}"/>
                     <label class="form-check-label" for="flexRadioDefault2"> Feminino </label>
                 </div>
                 </div>
@@ -82,22 +74,22 @@
               <h6>Estado Civil</h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                        id="flexRadioDefault3"th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).Casado}"  th: field="*{EstadoCivil}"/>
+                        id="flexRadioDefault3"th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).CASADO}"  th: field="*{EstadoCivil}"/>
                     <label class="form-check-label" for="flexRadioDefault3">Casado(a) </label>
                 </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                          id="flexRadioDefault4" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).Solteiro}" th: field="*{EstadoCivil}"/>
+                          id="flexRadioDefault4" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).SOLTEIRO}" th: field="*{EstadoCivil}"/>
                     <label class="form-check-label" for="flexRadioDefault4">Solteiro(a) </label>
                 </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                        id="flexRadioDefault5" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).Viuvo}" th: field="*{EstadoCivil}"/>
+                        id="flexRadioDefault5" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).VIUVO}" th: field="*{EstadoCivil}"/>
                     <label class="form-check-label" for="flexRadioDefault5">Viuvo(a) </label>
                 </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                        id="flexRadioDefault6" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).Divorciado}" th: field="*{EstadoCivil}"/>
+                        id="flexRadioDefault6" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).DIVORCIADO}" th: field="*{EstadoCivil}"/>
                     <label class="form-check-label" for="flexRadioDefault6">Divorciado(a) </label>
                 </div>       
               </div>  
