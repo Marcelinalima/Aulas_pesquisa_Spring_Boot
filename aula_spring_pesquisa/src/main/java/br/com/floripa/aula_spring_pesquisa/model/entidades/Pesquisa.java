@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil;
-import br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes;
+import br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilme;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -37,7 +37,7 @@ public class Pesquisa{
 
     @Getter 
     @Setter
-    private String  nome;
+    private String nome;
 
     @Getter
     @Setter
@@ -53,12 +53,12 @@ public class Pesquisa{
 
     @Getter
     @Setter
-    @ElementCollection(targetClass = GeneroFilmes.class, fetch = FetchType.LAZY)
+    @ElementCollection(targetClass = GeneroFilme.class, fetch = FetchType.LAZY)
     @JoinTable( name ="pesquisa_genero_filme_relation" , joinColumns = 
     @JoinColumn(name = "pesquisa_id")
     )
     @Column(name ="tipo_genero", nullable = false)
-    private List<GeneroFilmes>generosFilme = new ArrayList<>();
+    private List<GeneroFilme>generoFilmes = new ArrayList<>();
 
 	
 

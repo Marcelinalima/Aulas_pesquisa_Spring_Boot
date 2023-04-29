@@ -9,6 +9,16 @@
             "projectName": "aula_spring_pesquisa",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AulaSpringPesquisaApplication<aula_spring_pesquisa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.floripa.aula_spring_pesquisas.AulaSpringPesquisaApplication",
+            "projectName": "aula_spring_pesquisa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
