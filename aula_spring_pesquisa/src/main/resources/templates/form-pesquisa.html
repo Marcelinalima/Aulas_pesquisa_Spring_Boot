@@ -44,17 +44,18 @@
       <div class="card-header">Cadastro de Pesquisas</div>
       <div class="card-body">
         
-        <form  th:action="@{/salvar}"th:object="${pesquisa}" method="post">
+        
+        <form th:action="@{/pesquisas}" method="post" th:object="${pesquisa}">
           <div class="row">
             <div class="col-3">
               <div class="form-outline">
-                  <input type="text" id="nome" class="form-control" th: field="*{nome}"/>
-                  <label class="form-label" for="typeText">NAME</label>
+                  <input type="text" id="nome" class="form-control" th:field="*{nome}"/>
+                  <label class="form-label" for="nome">NOME</label>
               </div>
             </div>
             <div class="col-4">
               <div class="form-outline">
-                  <input type="email" id="email" class="form-control " th: field="*{email}" />
+                  <input type="email" id="email" class="form-control" th:field="*{email}" />
                   <label class="form-label" for="E-mail">E-MAIL</label>
               </div>
             </div>
@@ -64,12 +65,12 @@
               <h6>Sexo</h6>
                   <!-- Default radio -->
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault1" value="Masculino" th: field="*{Sexo}"/>
+                    <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault1" value="Masculino" th:field="*{sexo}"/>
                     <label class="form-check-label" for="flexRadioDefault1"> Masculino </label>
                 </div>
               <!-- Default checked radio -->
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault2" value="feminino" th: field="*{Sexo}"/>
+                    <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault2" value="feminino" th:field="*{sexo}"/>
                     <label class="form-check-label" for="flexRadioDefault2"> Feminino </label>
                 </div>
                 </div>
@@ -77,23 +78,23 @@
               <h6>Estado Civil</h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                        id="inlineRadio1" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.EstadoCivil).CASADO}"  th: field="*{EstadoCivil}"/>
-                    <label class="form-check-label" for="inlineRadio1">Casado(a) </label>
+                        id="inlineRadio3" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).CASADO}" th:field="*{estadoCivil}"/>
+                    <label class="form-check-label" for="inlineRadio3">Casado(a) </label>
                 </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                          id="inlineRadio2" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.EstadoCivil).SOLTEIRO}" th: field="*{EstadoCivil}"/>
-                    <label class="form-check-label" for="inlineRadio2">Solteiro(a) </label>
+                          id="inlineRadio4" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).SOLTEIRO}" th:field="*{estadoCivil}"/>
+                    <label class="form-check-label" for="inlineRadio4">Solteiro(a) </label>
                 </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                        id="inlineRadio3" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.EstadoCivil).VIUVO}" th: field="*{EstadoCivil}"/>
-                    <label class="form-check-label" for="inlineRadio3">Viuvo(a) </label>
+                        id="inlineRadio5" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).VIUVO}" th:field="*{estadoCivil}"/>
+                    <label class="form-check-label" for="inlineRadio5">Viuvo(a) </label>
                 </div> 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="EstadoCivil" 
-                        id="inlineRadio4" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.EstadoCivil).DIVORCIADO}" th: field="*{EstadoCivil}"/>
-                    <label class="form-check-label" for="inlineRadio4">Divorciado(a) </label>
+                        id="inlineRadio6" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.EstadoCivil).DIVORCIADO}" th:field="*{estadoCivil}"/>
+                    <label class="form-check-label" for="inlineRadio6">Divorciado(a) </label>
                 </div>       
               </div>  
             </div>
@@ -102,32 +103,32 @@
               <div class="col-4">
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.GeneroFilme).FICCAO}" id="chkFiccao" th:field = "*{generoFilmes}"/>
+                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes).FICCAO}" id="chkFiccao" th:field="*{generosFilme}"/>
                   <label class="form-check-label" for="chkFiccao">Ficção</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox"th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.GeneroFilme).ACAO}"id="chkAcao"  th:field = "*{generoFilmes}" />
+                  <input class="form-check-input" type="checkbox"th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes).ACAO}"id="chkAcao"  th:field="*{generosFilme}" />
                   <label class="form-check-label" for="chkAcao">Ação</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.GeneroFilme).TERROR}"id="chkTerror"  th:field = "*{generoFilmes}"/>
+                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes).TERROR}"id="chkTerror"  th:field="*{generosFilme}"/>
                   <label class="form-check-label" for="chkTerror">Terror</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.GeneroFilme).ROMANCE}"id="chkRomance"  th:field = "*{generoFilmes}"/>
+                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes).ROMANCE}"id="chkRomance"  th:field="*{generosFilme}"/>
                   <label class="form-check-label" for="chkRomance">Romance</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.GeneroFilme).COMEDIA}"id="chkComedia"  th:field = "*{generoFilmes}" />
+                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes).COMEDIA}"id="chkComedia"  th:field="*{generosFilme}" />
                   <label class="form-check-label" for="chkComedia">Comédia</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisas.model.enums.GeneroFilme).ANIMACAO}"id="chkAnimacao"  th:field = "*{generoFilmes}"/>
+                  <input class="form-check-input" type="checkbox" th:value="${T(br.com.floripa.aula_spring_pesquisa.model.enums.GeneroFilmes).ANIMACAO}"id="chkAnimacao"  th:field="*{generosFilme}" />
                   <label class="form-check-label" for="chkAnimacao">Animação</label>
                 </div>
                 
