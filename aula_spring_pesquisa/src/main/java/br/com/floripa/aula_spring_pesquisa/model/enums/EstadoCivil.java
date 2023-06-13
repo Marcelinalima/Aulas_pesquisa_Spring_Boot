@@ -1,7 +1,7 @@
 package br.com.floripa.aula_spring_pesquisa.model.enums;
 
 import lombok.Getter;
-import lombok.Setter;
+
 
 public enum EstadoCivil {
     
@@ -10,7 +10,7 @@ public enum EstadoCivil {
     VIUVO("Viuvo(a)"),
     DIVORCIADO("Divorciado(a)");
 
-    @Getter @Setter
+    @Getter
     private String descricao;
 
     EstadoCivil(String descricao){
